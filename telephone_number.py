@@ -12,16 +12,16 @@ def start_trace(number):
         p = ph.parse(numero, None)
 
         if not ph.is_valid_number(p):
-            print("[!] Número no válido. Asegúrate de incluir el prefijo internacional (+34, +1, etc.)")
+            print("[!] invalid Number. Make sure to enter the international prefix (+34, +1, etc.)")
             return
 
-        # Simulación de "traceo paso a paso"
+        
         pasos = [
-            "Analizando prefijo internacional...",
-            "Identificando país y región...",
-            "Buscando operador telefónico...",
-            "Consultando zona horaria...",
-            "Generando informe..."
+            "[!] [!] Analyzing international prefix...",
+            "[!] Identifying country and region...",
+            "[!] Looking for a phone operator...",
+            "[!] Checking time zone...",
+            "[!] Generating report..."
         ]
         for paso in pasos:
             print("[...] " + paso)
@@ -33,11 +33,11 @@ def start_trace(number):
         zonas = timezone.time_zones_for_number(p)
         tipo = ph.number_type(p)
 
-        print("\n[+] --- Resultados del Traceo ---")
-        print(f"[+] País / Región : {ubicacion if ubicacion else 'No disponible'}")
-        print(f"[+] Operador      : {compania if compania else 'No disponible'}")
-        print(f"[+] Zona horaria  : {', '.join(zonas) if zonas else 'No disponible'}")
-        print(f"[+] Tipo de número: {tipo}")  # 1 = fijo, 2 = móvil, etc.
+        print("\n[+] --- Trace Results ---")
+        print(f"[+] Country / Region : {ubicacion if ubicacion else 'No disponible'}")
+        print(f"[+] Company: {compania if compania else 'No disponible'}")
+        print(f"[+]  Time Zone: {', '.join(zonas) if zonas else 'No disponible'}")
+        print(f"[+] Number type: {tipo}")  # 1 = fijo, 2 = móvil, etc.
         print("[+] Trace complete... ✅")
 
     except Exception as e:
@@ -45,5 +45,6 @@ def start_trace(number):
 
 
 # Ejecución
-number = input("Introduce el número completo -> ")  # Ejemplo: +34 612345678
+number = input("Enter full number, example: +34 123456789 -> ")
 start_trace(number)
+
