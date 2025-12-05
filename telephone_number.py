@@ -34,9 +34,9 @@ def start_trace(number):
         tipo = ph.number_type(p)
 
         print("\n[+] --- Trace Results ---")
-        print(f"[+] Country / Region : {ubicacion if ubicacion else 'No disponible'}")
-        print(f"[+] Company: {compania if compania else 'No disponible'}")
-        print(f"[+]  Time Zone: {', '.join(zonas) if zonas else 'No disponible'}")
+        print(f"[+] Country / Region : {ubicacion if ubicacion else 'not available'}")
+        print(f"[+] Company: {compania if compania else 'not available'}")
+        print(f"[+]  Time Zone: {', '.join(zonas) if zonas else 'not available'}")
         print(f"[+] Number type: {tipo}")  # 1 = fijo, 2 = móvil, etc.
         print("[+] Trace complete... ✅")
 
@@ -47,4 +47,5 @@ def start_trace(number):
 # Ejecución
 number = input("Enter full number, example: +34 123456789 -> ")
 start_trace(number)
+
 
